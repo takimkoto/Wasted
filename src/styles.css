@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+
+.collection-container {
+    display: flex;
+    justify-content: space-around; /* 横並びに配置 */
+    margin-bottom: 20px; /* 下の余白 */
+}
+
+.collection-item {
+    border: 1px solid #ddd; /* 枠線 */
+    border-radius: 5px; /* 角を丸くする */
+    padding: 15px; /* 内側の余白 */
+    text-align: center; /* 中央揃え */
+    width: 30%; /* 幅を調整 */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
