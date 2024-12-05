@@ -9,7 +9,8 @@ app = FastAPI()
 now = datetime.now()
 current_year = now.year
 current_month = now.month
-connection = psycopg2.connect("host=localhost dbname=postgres user=postgres password=postgres")
+# connection = psycopg2.connect("host=localhost dbname=postgres user=postgres password=postgres")
+connection = psycopg2.connect("host=dpg-ct8r2bdds78s73cfmfmg-a dbname=wasted_i2mx user=wasted password=YV9MAUqyGR4CV1gNsLL9EDL9qLTG5uVI")
 
 
 
