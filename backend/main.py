@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from config import DATABASE_URL
 from datetime import datetime
 import psycopg2
+import uvicorn
 
 app = FastAPI()
 now = datetime.now()
@@ -46,3 +47,6 @@ def getSchedules():
     query_results = cursor.fetchall()
     return query_results
 
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))  # 環境変数 PORT を取得、デフォルトは 8000
+    uvicorn.run(app, host="0.0.0.0", port=port)
