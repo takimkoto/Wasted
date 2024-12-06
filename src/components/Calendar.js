@@ -5,8 +5,8 @@ const Calendar = () => {
     const [calendarData, setCalendarData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [selectYear, setSelectYear] = useState(new Date().getFullYear());
-    const [selectMonth, setSelectMonth] = useState(new Date().getMonth() + 1);
+    const selectYear = new Date().getFullYear(); // 状態にする必要がない場合
+    const selectMonth = new Date().getMonth() + 1; // 状態にする必要がない場合
 
     useEffect(() => {
         const fetchCalendarData = async () => {
@@ -30,16 +30,6 @@ const Calendar = () => {
         return <p>エラー: {error}</p>;
     }
 
-    const wasteIcons = {
-        'プラスチックごみ': '/icons/plastic.png',
-        '古着・古紙': '/icons/clothing.png',
-        '燃えるごみ': '/icons/fire.png',
-        '透明ビン': '/icons/glass.png',
-        '不燃ごみ': '/icons/can.png',
-        'ペットボトル・缶': '/icons/pet.png',
-        '色付きビン': '/icons/colorgrass.png'
-    };
-
     const renderCalendar = () => {
         const year = selectYear; // 選択された年
         const month = selectMonth; // 選択された月
@@ -53,10 +43,8 @@ const Calendar = () => {
             const week = [];
             for (let j = 0; j < 7; j++) {
                 if (i === 0 && j < firstDay) {
-                    // 最初の行に空のセルを追加
                     week.push(<td key={`empty-${j}`}></td>);
                 } else if (dayCounter > daysInMonth) {
-                    // 月の日数を超えた場合は空のセルを追加
                     week.push(<td key={`empty-${dayCounter}`}></td>);
                 } else {
                     const date = `${year}-${month < 10 ? '0' + month : month}-${dayCounter < 10 ? '0' + dayCounter : dayCounter}`;
