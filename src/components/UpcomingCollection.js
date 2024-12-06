@@ -5,8 +5,8 @@ const UpcomingCollection = () => {
     const [collectionData, setCollectionData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    // const [selectYear, setSelectYear] = useState(new Date().getFullYear());
-    // const [selectMonth, setSelectMonth] = useState(new Date().getMonth() + 1);
+    const [selectYear, setSelectYear] = useState(new Date().getFullYear());
+    const [selectMonth, setSelectMonth] = useState(new Date().getMonth() + 1);
 
     useEffect(() => {
         const fetchCalendarData = async () => {
