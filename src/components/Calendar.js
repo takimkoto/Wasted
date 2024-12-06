@@ -11,7 +11,7 @@ const Calendar = () => {
     useEffect(() => {
         const fetchCalendarData = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/schedules`);
+                const response = await axios.get(`https://wasted-dj5z.onrender.com/schedules`);
                 setCalendarData(response.data);
             } catch (err) {
                 setError(err.message);
